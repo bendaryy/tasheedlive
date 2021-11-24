@@ -43,7 +43,7 @@ class InvoiceController extends Controller
                 "name" => $request->receiverName,
             ),
             "documentType" => $request->DocumentType,
-            "documentTypeVersion" => "0.9",
+            "documentTypeVersion" => "1.0",
             "dateTimeIssued" => $request->date . "T" . date("h:i:s") . "Z",
             "taxpayerActivityCode" => $request->taxpayerActivityCode,
             "internalID" => $request->internalId,
@@ -124,7 +124,7 @@ class InvoiceController extends Controller
         // return $datasave;
 
         $trnsformed = json_encode($invoice, JSON_UNESCAPED_UNICODE);
-        $myFileToJson = fopen("D:\laragon\www/tasheedtest\EInvoicing\SourceDocumentJson.json", "w") or die("unable to open file");
+        $myFileToJson = fopen("C:\laragon\www/tasheedlive\EInvoicing\SourceDocumentJson.json", "w") or die("unable to open file");
         fwrite($myFileToJson, $trnsformed);
         return redirect()->route('cer');
 
@@ -132,12 +132,12 @@ class InvoiceController extends Controller
     public function openBat()
     {
 
-        shell_exec('D:\laragon\www/tasheedtest\EInvoicing\SubmitInvoices2.bat');
+        shell_exec('C:\laragon\www/tasheedlive\EInvoicing\SubmitInvoices2.bat');
 
-        $path = "D:\laragon\www/tasheedtest\EInvoicing\FullSignedDocument.json";
-        $path2 = "D:\laragon\www/tasheedtest\EInvoicing\Cades.txt";
-        $path3 = "D:\laragon\www/tasheedtest\EInvoicing\CanonicalString.txt";
-        $path4 = "D:\laragon\www/tasheedtest\EInvoicing\SourceDocumentJson.json";
+        $path = "C:\laragon\www/tasheedlive\EInvoicing\FullSignedDocument.json";
+        $path2 = "C:\laragon\www/tasheedlive\EInvoicing\Cades.txt";
+        $path3 = "C:\laragon\www/tasheedlive\EInvoicing\CanonicalString.txt";
+        $path4 = "C:\laragon\www/tasheedlive\EInvoicing\SourceDocumentJson.json";
 
         $fullSignedFile = file_get_contents($path);
 
