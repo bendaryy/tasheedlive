@@ -188,7 +188,7 @@
 
 
 
-                <div class="form-group row invoice-created-by">
+                {{-- <div class="form-group row invoice-created-by">
                     <label for="payment-method-country" class="col-sm-3 col-form-label col-form-label-sm">نوع العنصر
                     </label>
                     <div class="col-sm-9">
@@ -198,7 +198,7 @@
 
                         </select>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group row invoice-created-by">
                     <label for="payment-method-country" class="col-sm-3 col-form-label col-form-label-sm">نوع
