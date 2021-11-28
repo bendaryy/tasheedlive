@@ -305,7 +305,6 @@ class InvoiceController extends Controller
         }
     }
 
-
     public function DeclineRejectDocument($uuid)
     {
         $response = Http::asForm()->post('https://id.eta.gov.eg/connect/token', [
@@ -326,7 +325,6 @@ class InvoiceController extends Controller
             return redirect()->back()->with('error', $cancel['error']['details'][0]['message']);
         }
     }
-
 
     public function DeclineCancelDocument($uuid)
     {
@@ -368,7 +366,6 @@ class InvoiceController extends Controller
         return view('invoice.requestCancelled', compact('allInvoices', 'allMeta'));
     }
 
-
     public function companiesRequestcancelledDoc()
     {
         $response = Http::asForm()->post('https://id.eta.gov.eg/connect/token', [
@@ -388,7 +385,6 @@ class InvoiceController extends Controller
         return view('invoice.companiesRequestCancelled', compact('allInvoices', 'allMeta'));
     }
 
-
     public function cancelledDoc()
     {
         $response = Http::asForm()->post('https://id.eta.gov.eg/connect/token', [
@@ -402,13 +398,11 @@ class InvoiceController extends Controller
             "Authorization" => 'Bearer ' . $response['access_token'],
         ])->get('https://api.invoicing.eta.gov.eg/api/v1.0/documents/recent?pageSize=2000000000');
 
-
         $allInvoices = $showInvoices['result'];
 
         $allMeta = $showInvoices['metadata'];
         return view('invoice.showCancelled', compact('allInvoices', 'allMeta'));
     }
-
 
     public function companyCancelledDoc()
     {
@@ -423,14 +417,11 @@ class InvoiceController extends Controller
             "Authorization" => 'Bearer ' . $response['access_token'],
         ])->get('https://api.invoicing.eta.gov.eg/api/v1.0/documents/recent?pageSize=2000000000');
 
-
         $allInvoices = $showInvoices['result'];
 
         $allMeta = $showInvoices['metadata'];
         return view('invoice.showCompanyCancelled', compact('allInvoices', 'allMeta'));
     }
-
-
 
     public function rejected()
     {
@@ -445,13 +436,11 @@ class InvoiceController extends Controller
             "Authorization" => 'Bearer ' . $response['access_token'],
         ])->get('https://api.invoicing.eta.gov.eg/api/v1.0/documents/recent?pageSize=2000000000');
 
-
         $allInvoices = $showInvoices['result'];
 
         $allMeta = $showInvoices['metadata'];
         return view('invoice.showRejected', compact('allInvoices', 'allMeta'));
     }
-
 
     public function companyRejected()
     {
@@ -466,14 +455,11 @@ class InvoiceController extends Controller
             "Authorization" => 'Bearer ' . $response['access_token'],
         ])->get('https://api.invoicing.eta.gov.eg/api/v1.0/documents/recent?pageSize=2000000000');
 
-
         $allInvoices = $showInvoices['result'];
 
         $allMeta = $showInvoices['metadata'];
         return view('invoice.companyRejected', compact('allInvoices', 'allMeta'));
     }
-
-
 
     public function requestCompanyRejected()
     {
@@ -488,13 +474,11 @@ class InvoiceController extends Controller
             "Authorization" => 'Bearer ' . $response['access_token'],
         ])->get('https://api.invoicing.eta.gov.eg/api/v1.0/documents/recent?pageSize=2000000000');
 
-
         $allInvoices = $showInvoices['result'];
 
         $allMeta = $showInvoices['metadata'];
         return view('invoice.RequestCompanyRejected', compact('allInvoices', 'allMeta'));
     }
-
 
     public function requestRejected()
     {
@@ -509,16 +493,11 @@ class InvoiceController extends Controller
             "Authorization" => 'Bearer ' . $response['access_token'],
         ])->get('https://api.invoicing.eta.gov.eg/api/v1.0/documents/recent?pageSize=2000000000');
 
-
         $allInvoices = $showInvoices['result'];
 
         $allMeta = $showInvoices['metadata'];
         return view('invoice.RequestRejected', compact('allInvoices', 'allMeta'));
     }
-
-
-
-
 
     public function create3(Request $request)
     {
@@ -548,6 +527,5 @@ class InvoiceController extends Controller
         $hamada = response()->json($invoice);
         return $hamada;
     }
-
 
 }
