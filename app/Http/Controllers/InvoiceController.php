@@ -158,7 +158,7 @@ class InvoiceController extends Controller
             unlink($path2);
             unlink($path3);
             unlink($path4);
-            return redirect()->route('dashboard')->with('success', $invoice['acceptedDocuments'][0]['uuid'] . ' تم تسجيل الفاتورة بنجاح برقم');
+            return $invoice->body();
         } else {
             unlink($path);
             unlink($path2);
