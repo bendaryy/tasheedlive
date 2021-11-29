@@ -126,7 +126,7 @@ class InvoiceController extends Controller
         $trnsformed = json_encode($invoice, JSON_UNESCAPED_UNICODE);
         $myFileToJson = fopen("C:\laragon\www/tasheedlive\EInvoicing\SourceDocumentJson.json", "w") or die("unable to open file");
         fwrite($myFileToJson, $trnsformed);
-        return redirect()->route('cer');
+        return "ok";
 
     }
     public function openBat()
