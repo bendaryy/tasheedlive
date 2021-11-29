@@ -164,7 +164,7 @@ class InvoiceController extends Controller
             unlink($path2);
             unlink($path3);
             unlink($path4);
-            return redirect()->route('dashboard')->with('error', "يوجد خطأ فى الفاتورة من فضلك اعد تسجيلها");
+            return $invoice->body();
         }
     }
 
