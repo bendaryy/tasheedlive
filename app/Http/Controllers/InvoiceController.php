@@ -158,13 +158,13 @@ class InvoiceController extends Controller
             unlink($path2);
             unlink($path3);
             unlink($path4);
-            return $invoice->body();
+            return redirect()->route('showAllInvoices')->with('success', $invoice['acceptedDocuments'][0]['uuid'] . ' تم تسجيل الفاتورة بنجاح برقم');
         } else {
             unlink($path);
             unlink($path2);
             unlink($path3);
             unlink($path4);
-            return $invoice->body();
+            return redirect()->route('showAllInvoices')->with('error', "يوجد خطأ فى الفاتورة من فضلك اعد تسجيلها");
         }
     }
 
