@@ -99,7 +99,7 @@ class InvoiceController extends Controller
 
                         "taxType" => "T4",
                         "amount" => floatval($request->t4Amount[$i]),
-                        "subType" => "W010",
+                        "subType" => ($request->t4subtype[$i]),
                         "rate" => floatval($request->t4rate[$i]),
                     ],
                     [

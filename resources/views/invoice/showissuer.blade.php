@@ -125,7 +125,9 @@
             {{--  <td>  {{ Carbon\Carbon::parse($invoice['dateTimeIssued'])->format('d-m-Y') }}</td>  --}}
             <td>  {{ ($invoice['internalId']) }}</td>
             {{--  <td>   {{ $invoice['dateTimeIssued'] }}</td>  --}}
-            <td><a href="{{ $invoice['publicUrl'] }}" class="btn btn-success">عرض الفاتورة على موقع الضرائب</a></td>
+           <td><a href="https://invoicing.eta.gov.eg/print/documents/{{ $invoice['uuid']}}/share/{{ $invoice['longId'] }}"
+                                    class="btn btn-success">عرض الفاتورة على موقع الضرائب</a>
+                            </td>
             <td><a href="{{ route('pdf',$invoice['uuid']) }}" class="btn btn-info"> pdf تحميل الفاتورة </a></td>
             {{-- <td><a href="https://preprod.invoicing.eta.gov.eg/print/documents/{{ $invoice['uuid'] }}/share/5CXPPGYXYJY5K5MVZ3WYCZFF10eRv7511632067612"> من موقع الضرائب pdf تحميل الفاتورة </a></td> --}}
             <td>

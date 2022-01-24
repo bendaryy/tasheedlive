@@ -264,6 +264,7 @@
 
             <th>قيمة الضريبة (النسبية) %</th>
             <th>رمز الصنف</th>
+              <th>النوع الفرعى لضريبة المنبع</th>
             <th>قيمة ضريبة المنبع %</th>
             <th>الكمـــية</th>
             <th>المبلغ بالجنيه المصرى</th>
@@ -284,6 +285,13 @@
                     <option value="10005356" >مجموعات متنوعة من مواد التشحيم</option>
                 </select>
             </td>
+             <td>
+                        <select name="t4subtype[]" id="t4subtype" class="form-control form-control-sm">
+                            <option value="W002" selected>التوريدات</option>
+                            <option value="W003">المشتريات</option>
+                            <option value="W004">الخدمات</option>
+                        </select>
+                            </td>
             <td>
                 <input type="number" width="1px" name="t4rate[]" id="t4rate" onkeyup="findTotalt4Amount()"
                     onmouseover="findTotalt4Amount()">
@@ -309,7 +317,7 @@
             <th> قيمة ضريبة (المنبع) </th>
             <th>إجمالي المبيعات</th>
             <th>الإجمالى الصافى</th>
-            <th colspan="3">الإجمالى</th>
+            <th colspan="4">الإجمالى</th>
         </tr>
         <tr>
             <td> <input type="number" step="any" name="t2Amount[]" readonly id="t2" onkeyup="findTotalt2Amount()"
@@ -323,7 +331,7 @@
             <td><input type="number" step="any" readonly name="netTotal[]" id="netTotal"
                     onkeyup="nettotal(this.value),findTotalNetAmount()"
                     onmouseover="nettotal(this.value),findTotalNetAmount()"></td>
-            <td colspan="3"><input type="number" step="any" name="totalItemsDiscount[]" readonly id="totalItemsDiscount"
+            <td colspan="4"><input type="number" step="any" name="totalItemsDiscount[]" readonly id="totalItemsDiscount"
                     onkeyup="findTotalAmount()" onmouseover="findTotalAmount()">
         </tr>
 
@@ -443,6 +451,7 @@
                         <tr>
                             <th>قيمة الضريبة (النسبية) %</th>
                             <th>رمز الصنف</th>
+                            <th>النوع الفرعى لضريبة المنبع</th>
                             <th>قيمة ضريبة المنبع %</th>
                             <th>الكمـــية</th>
                             <th>المبلغ بالجنيه المصرى</th>
@@ -464,6 +473,13 @@
                                     <option value="10005356">مجموعات متنوعة من مواد التشحيم</option>
                                 </select>
                             </td>
+                             <td>
+                        <select name="t4subtype[]" id="t4subtype" class="form-control form-control-sm">
+                            <option value="W002" selected>التوريدات</option>
+                            <option value="W003">المشتريات</option>
+                            <option value="W004">الخدمات</option>
+                        </select>
+                            </td>
                             <td>
                                 <input type="number" width="1px" name="t4rate[]" id="t4rate${i}">
 
@@ -479,7 +495,7 @@
                             <th> قيمة ضريبة (المنبع) </th>
                             <th>إجمالي المبيعات</th>
                             <th>الإجمالى الصافى</th>
-                            <th colspan="3"> الإجمالي</th>
+                            <th colspan="4"> الإجمالي</th>
                         </tr>
                         <tr>
                             <td> <input type="number" step="any" name="t2Amount[]" readonly id="t2${i}" {{--
@@ -489,7 +505,7 @@
                             </td>
                             <td><input type=number step="any" name="salesTotal[]" readonly id="salesTotal${i}"></td>
                             <td><input type="number" step="any" readonly name="netTotal[]" id="netTotal${i}" onkeyup="nettotal${i}(this.value),findTotalNetAmount()" onmouseover="nettotal${i}(this.value),findTotalNetAmount()"></td>
-                            <td colspan="3"><input type="number" step="any" name="totalItemsDiscount[]" readonly id="totalItemsDiscount${i}">
+                            <td colspan="4"><input type="number" step="any" name="totalItemsDiscount[]" readonly id="totalItemsDiscount${i}">
                         </tr>
                     </table>
 
